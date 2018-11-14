@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-space.pipe';
+import { StarComponent } from './shared/star.component';
 
 // tslint:disable-next-line:import-spacing
 
@@ -12,7 +13,8 @@ import { ConvertToSpacesPipe } from './shared/convert-to-space.pipe';
   declarations: [
     AppComponent,
     ProductListComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
