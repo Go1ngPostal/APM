@@ -9,6 +9,7 @@ import { ConvertToSpacesPipe } from './shared/convert-to-space.pipe';
 import { StarComponent } from './shared/star.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product/product-detail.component';
+import { ProductDetailGuard } from './product/product-detail.guard';
 import { WelcomeComponent } from './home/welcome.component';
 
 // tslint:disable-next-line:import-spacing
@@ -28,7 +29,9 @@ import { WelcomeComponent } from './home/welcome.component';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'product', component: ProductListComponent},
-      {path: 'product/:id', component: ProductDetailComponent},
+      {path: 'product/:id',
+        canActivate: [ ProductDetailGuard ],
+        component: ProductDetailComponent},
       {path: 'welcome', component: WelcomeComponent},
       {path: '', redirectTo: 'welcome', pathMatch: 'full'},
       {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
