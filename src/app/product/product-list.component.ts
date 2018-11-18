@@ -43,7 +43,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.productService.getProduct().subscribe(
+      this.productService.getProducts().subscribe(
       products => {
         this.products = products;
         this.filteredProducts = this.products;
